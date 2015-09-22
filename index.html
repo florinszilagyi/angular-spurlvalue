@@ -10,20 +10,48 @@
     <script data-require="angular.js@*" data-semver="1.4.6" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
     <script src="https://rawgit.com/florinszilagyi/angular-spurlvalue/master/dist/angular-spurlvalue.templates.min.js" type="text/javascript"></script>
     <script src="https://rawgit.com/florinszilagyi/angular-spurlvalue/master/dist/angular-spurlvalue.min.js" type="text/javascript"></script>
+    <style type="text/css">
+  		.form-group{
+  			padding: 10px;
+  		}
+  		
+  		.form-group input {
+  			margin: 5px;
+  		}
+  	</style>
   </head>
 
   <body ng-app="app">
     <h1>SPFieldValue Directive Demo</h1>
-    <div style="width: 150px" ng-controller="demo">
-	    <input type="text" ng-model="lnk" />
-	    <div sp-url-value="" ng-model="lnk" image="false" readonly="false" link-text="hello"></div>
+	<hr/>
+    <div ng-controller="demo">
+		<div class="form-group">
+			<label> Link Example </label>
+			<input type="text" ng-model="lnk" style="width: 350px" />
+			<div sp-url-value="" ng-model="lnk" image="false" ng-disabled="isreadonly"></div>
+		</div>
+		<div class="form-group">
+			<label>Readonly</label>
+			<input type="checkbox" ng-model="isreadonly" />
+		</div>
+		
+		<hr />
+		<div class="form-group">
+			<label> Image example </label>
+			<div sp-url-value ng-model="img" image="false" readonly="false" link-text="Image Link" title-text="Image Alt"></div>
+			<div style="width: 200px">
+				<div sp-url-value ng-model="img" image="true" readonly="false"></div>
+			</div>
+		</div>
+		
     </div>
   </body>
   <script type="text/javascript">
   	(function(){
 		  var app = angular.module('app', ['angular-spurlvalue']);
 		  app.controller("demo", function($scope){
-			  $scope.lnk = "www.google.com;#Google"
+			  $scope.lnk = "www.google.com;#Google";
+			  $scope.img = "http://en.share-gate.com/~/media/Modules/EviBlog/SharegateBlog/2013/January/SharePoint-2013-Logo-Migration.ashx;#SharePoint";
 		  });
 	  })();
   </script>
