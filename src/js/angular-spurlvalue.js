@@ -10,7 +10,7 @@
         return {
             restrict: 'EA',
             require: '^ngModel',
-            templateUrl: 'scr/js/angular-spurlvalue.tpl.html',
+            templateUrl: 'angular-spurlvalue.tpl.html',
             replace: true,
             scope: {
                 ngDisabled: '=',
