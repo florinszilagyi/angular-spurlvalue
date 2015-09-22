@@ -10,7 +10,7 @@
         return {
             restrict: 'EA',
             require: '^ngModel',
-            templateUrl: 'angular-spurlvalue.tpl.html',
+            templateUrl: 'src/js/angular-spurlvalue.tpl.html',
             replace: true,
             scope: {
                 ngDisabled: '=',
@@ -64,6 +64,10 @@
                         link: scope.link,
                         title: newV
                     });
+                });
+                
+                scope.$watch('ngDisabled', function(newV) {
+                    scope.readonly = newV || scope.$eval(attrs.disabled) || scope.$eval(attrs.readonly);
                 });
             }
         };
