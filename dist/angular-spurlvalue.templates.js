@@ -1,4 +1,4 @@
-angular.module('angular-spurlvalue.tpl.html').run(['$templateCache', function($templateCache) {
+angular.module('angular-spurlvalue').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('src/js/angular-spurlvalue.tpl.html',

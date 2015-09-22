@@ -51,7 +51,7 @@
             },
 
             ngtemplates: {
-                'angular-spurlvalue.tpl.html': {
+                'angular-spurlvalue': {
                     src: "src/{,*/}*.html",
                     dest: 'dist/<%= pkg.name %>.templates.js',
                 },
