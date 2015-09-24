@@ -26,7 +26,7 @@
 	<hr/>
     <div ng-controller="demo">
 		<div class="form-group">
-			<label> Link Example </label>
+			<label> Type - {{type}} </label>
 			<input type="text" ng-model="lnk" style="width: 350px" />
 			<div sp-url-value="" ng-model="lnk" image="false" ng-disabled="isreadonly" image="isImage"></div>
 		</div>
@@ -52,13 +52,16 @@
 			  var lnk = "www.google.com;#Google";
 			  var img = "http://en.share-gate.com/~/media/Modules/EviBlog/SharegateBlog/2013/January/SharePoint-2013-Logo-Migration.ashx;#SharePoint";
 			  $scope.isImage = true;
+			  $scope.type = "Link";
 			  
 			  $scope.setImage = function(){
 				  $scope.lnk = lnk;
+				  $scope.type = "Link";
 			  };
 			  
 			  $scope.setLink = function(){
 				  $scope.lnk = img;
+				  $scope.type = "Image";
 			  };
 		  });
 	  })();
