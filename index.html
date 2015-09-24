@@ -18,6 +18,10 @@
   		.form-group input {
   			margin: 5px;
   		}
+		  
+		.angular-spurl-viewer img {
+			height: 100px;
+		}
   	</style>
   </head>
 
@@ -27,8 +31,7 @@
     <div ng-controller="demo">
 		<div class="form-group">
 			<label> Type - {{type}} </label>
-			<input type="text" ng-model="lnk" style="width: 350px" />
-			<div sp-url-value ng-model="lnk" image="isImage" ng-disabled="isreadonly"></div>
+			Raw Value: {{lnk}}
 		</div>
 		<div class="form-group">
 			<label>Readonly</label>
@@ -43,6 +46,9 @@
 		<button ng-click="setImage()">Set an image</button>
 		<button ng-click="setLink()">Set a link</button>
 		
+		<hr />
+		<h3>Result</h3>
+		<div sp-url-value ng-model="lnk" image="isImage" ng-disabled="isreadonly"></div>
     </div>
   </body>
   <script type="text/javascript">
