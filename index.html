@@ -28,21 +28,20 @@
 		<div class="form-group">
 			<label> Link Example </label>
 			<input type="text" ng-model="lnk" style="width: 350px" />
-			<div sp-url-value="" ng-model="lnk" image="false" ng-disabled="isreadonly"></div>
+			<div sp-url-value="" ng-model="lnk" image="false" ng-disabled="isreadonly" image="isImage"></div>
 		</div>
 		<div class="form-group">
 			<label>Readonly</label>
 			<input type="checkbox" ng-model="isreadonly" />
 		</div>
+		<div class="form-group">
+			<label>Image</label>
+			<input type="checkbox" ng-model="isImage" />
+		</div>
 		
 		<hr />
-		<div class="form-group">
-			<label> Image example </label>
-			<div sp-url-value ng-model="img" image="false" readonly="false" link-text="Image Link" title-text="Image Alt"></div>
-			<div style="width: 200px">
-				<div sp-url-value ng-model="img" image="true" readonly="false"></div>
-			</div>
-		</div>
+		<button ng-click="setImage()">Set an image></button>
+		<button ng-click="setLink()">Set a link</button>
 		
     </div>
   </body>
@@ -50,8 +49,17 @@
   	(function(){
 		  var app = angular.module('app', ['angular-spurlvalue']);
 		  app.controller("demo", function($scope){
-			  $scope.lnk = "www.google.com;#Google";
-			  $scope.img = "http://en.share-gate.com/~/media/Modules/EviBlog/SharegateBlog/2013/January/SharePoint-2013-Logo-Migration.ashx;#SharePoint";
+			  var lnk = "www.google.com;#Google";
+			  var img = "http://en.share-gate.com/~/media/Modules/EviBlog/SharegateBlog/2013/January/SharePoint-2013-Logo-Migration.ashx;#SharePoint";
+			  $scope.isImage = true;
+			  
+			  $scope.setImage = function(){
+				  $scope.lnk = lnk;
+			  };
+			  
+			  $scope.setLink = function(){
+				  $scope.lnk = img;
+			  };
 		  });
 	  })();
   </script>
