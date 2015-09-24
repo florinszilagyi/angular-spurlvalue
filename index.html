@@ -51,17 +51,20 @@
 		  app.controller("demo", function($scope){
 			  var lnk = "www.google.com;#Google";
 			  var img = "http://en.share-gate.com/~/media/Modules/EviBlog/SharegateBlog/2013/January/SharePoint-2013-Logo-Migration.ashx;#SharePoint";
-			  $scope.isImage = true;
+			  $scope.isImage = false;
 			  $scope.type = "Link";
+			  $scope.lnk = lnk;
 			  
 			  $scope.setImage = function(){
-				  $scope.lnk = lnk;
-				  $scope.type = "Link";
+				  $scope.lnk = img;
+				  $scope.type = "Image";
+				  $scope.isImage = true;
 			  };
 			  
 			  $scope.setLink = function(){
-				  $scope.lnk = img;
-				  $scope.type = "Image";
+				  $scope.isImage = false;
+				  $scope.lnk = lnk;
+				  $scope.type = "Link";
 			  };
 		  });
 	  })();
