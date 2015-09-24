@@ -17,12 +17,15 @@
                 image: '=',
                 linkText: '@',
                 titleText: '@',
-                containerClass: '@'
+                containerClass: '@',
+                target: '@'
             },
             link: function(scope, element, attrs, ngModel) {
                 scope.readonly = scope.ngDisabled || scope.$eval(attrs.disabled) || scope.$eval(attrs.readonly);
                 scope.linkText = scope.linkText || 'Link';
                 scope.titleText = scope.titleText || 'Title';
+                scope.target = scope.target || '_blank';
+                
                 ngModel.$formatters.push(function(modelValue) {
                     if (!modelValue) {
                         return {
